@@ -1,2 +1,53 @@
 <!DOCTYPE html>
-<html><body><h1>Witaj na mojej stronie!</h1></body></html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nowoczesna Strona</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-950 text-white font-sans">
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-blue-700 via-purple-700 to-pink-600">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+        Witamy na naszej stronie
+      </h1>
+      <p class="text-lg md:text-xl mb-8 max-w-xl text-white/90">
+        Nowoczesny design. Szybkość. Niesamowite wrażenia.
+      </p>
+      <a href="#oferta" class="px-6 py-3 bg-white text-black font-semibold rounded-xl shadow-xl hover:bg-gray-100 transition">
+        Zobacz ofertę
+      </a>
+    </section>
+
+    <!-- Oferta -->
+    <section id="oferta" class="py-20 px-6 bg-gray-900">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        Nasze usługi
+      </h2>
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 text-center">
+          <h3 class="text-xl font-bold mb-4">Tworzenie stron internetowych</h3>
+          <p class="text-white/80">Tworzymy responsywne i szybkie strony dopasowane do Twoich potrzeb.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 text-center">
+          <h3 class="text-xl font-bold mb-4">Usługa 2</h3>
+          <p class="text-white/80">Nowoczesne rozwiązania technologiczne.</p>
+        </div>
+        <a href="kontakt.html" class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 text-center block">
+          <h3 class="text-xl font-bold mb-4">Kontakt</h3>
+          <p class="text-white/80">Kliknij, aby zobaczyć dane kontaktowe.</p>
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class="bg-gray-950 text-center py-10 text-sm text-gray-400">
+      © 2025 Nowoczesna Strona. Wszelkie prawa zastrzeżone.
+    </footer>
+    
+  </body>
+</html>
