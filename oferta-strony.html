@@ -12,7 +12,6 @@
         padding: 12px 24px;
         font-weight: bold;
         color: white;
-        text-shadow: 0 0 5px #fff;
         box-shadow: 0 0 5px #6a5bfa, 0 0 10px #6a5bfa;
         transition: all 0.3s ease;
       }
@@ -20,6 +19,45 @@
       .button-glow:hover {
         transform: scale(1.05);
         box-shadow: 0 0 15px #8c6ae2, 0 0 20px #6a5bfa;
+      }
+
+      /* Modal z ciemnym tłem i kontrastowym tekstem */
+      .modal-content {
+  background-color: #2d2d2d;
+  color: gray;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* CIENIE TŁA */
+  border-radius: 16px;
+}
+
+.modal-content h2 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* LEKKI CIEŃ TEKSTU */
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* LEKKI CIEŃ TEKSTU */
+  line-height: 1.6;
+}
+
+      #contactModal {
+        z-index: 100;
+      }
+
+      input,
+      textarea {
+        background-color: #333;
+        color: white;
+        border: 1px solid #555;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #6a5bfa;
+        outline: none;
       }
     </style>
   </head>
@@ -41,33 +79,39 @@
       </div>
     </section>
 
-    <!-- MODAL: Formularz kontaktowy -->
+    <!-- MODAL: Poprawiony kontakt i CTA -->
     <div id="contactModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden">
-      <div class="bg-white text-gray-900 p-8 rounded-xl max-w-md w-full shadow-xl relative">
-        <button onclick="toggleForm()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl">&times;</button>
-        <h2 class="text-2xl font-bold mb-4 text-center">Zadaj pytanie</h2>
+      <div class="modal-content p-8 rounded-xl max-w-md w-full shadow-xl relative z-100 text-center">
+        <button onclick="toggleForm()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">&times;</button>
 
-        <form action="https://formspree.io/f/manoodwa" method="POST" class="space-y-4">
+        <!-- Poprawiony nagłówek i tekst -->
+        <h2 class="text-2xl font-bold mb-4">Potrzebujesz strony internetowej?</h2>
+        <p class="mb-6">
+          Oferujemy nowoczesne, szybkie i responsywne strony dopasowane do Twojego biznesu.<br>
+          Wybierz, co chcesz zrobić dalej!
+        </p>
+        <button class="button-glow w-full mb-6">Dowiedz się więcej</button>
+
+        <!-- Formularz kontaktowy -->
+        <form action="https://formspree.io/f/manoodwa" method="POST" class="space-y-4 text-left">
           <input
             type="email"
             name="email"
             placeholder="Twój e-mail"
             required
-            class="w-full px-4 py-2 rounded-md bg-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full px-4 py-2 rounded-md"
           />
-
           <textarea
             name="message"
             placeholder="Treść wiadomości"
             required
             rows="5"
-            class="w-full px-4 py-2 rounded-md bg-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full px-4 py-2 rounded-md"
           ></textarea>
-
           <button type="submit" class="button-glow w-full">Wyślij wiadomość</button>
         </form>
 
-        <p class="text-sm text-gray-500 mt-4 text-center">
+        <p class="text-sm text-gray-500 mt-4">
           Twoje dane nie będą udostępniane osobom trzecim.
         </p>
       </div>
